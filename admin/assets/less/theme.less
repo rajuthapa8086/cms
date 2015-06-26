@@ -1,0 +1,103 @@
+body {
+	background: #ECECEC;
+}
+#wrapper {
+	background: #FFF;
+	.box-shadow(0 0 5px #CCC);
+}
+#header {
+	background: lighten(#AAA, 25%);
+	border-bottom: solid 1px #AAA;
+}
+
+#main-nav {
+	.linear-gradient(top, #EEE, #DDD);
+	border-bottom: solid 1px #AAA;
+	ul {
+		li {
+			a {
+				&:link,
+				&:visited {
+					color: #000;
+					.linear-gradient(top, #EEE, #DDD);
+				}
+				&:hover,
+				&:active,
+				&:focus {
+					color: #ECECEC;
+					.linear-gradient(top, lighten(#000, 25%), lighten(#000, 35%));
+				}
+			}
+		}
+	}
+}
+
+#main-content {
+	
+	table {
+		border: solid 1px #CCC;		
+	}
+	th {
+		background: #AAA;
+		color: #FFF;
+	}
+	td {
+		background: #FFF;
+		color: #000;
+		border-bottom: solid 1px #CCC;
+	}
+	tr:nth-of-type(odd) td {
+		background: #FFF;
+	}
+	tr:nth-of-type(even) td {
+		background: #EEE;
+	}
+	tr:hover td {
+		background: #DDD;
+	}
+	form {
+		background: #FCFCFC;
+		border: solid 1px #CCC;
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		select,
+		textarea {
+			border: solid 1px #BBB;
+		}
+	}
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button {
+		.linear-gradient(top, #000, #222);
+		color: #FFF;
+		border: solid 1px #000;
+		&:hover,
+		&:focus {
+			.linear-gradient(top, #222, #000);
+			color: #FFF;
+			border: solid 1px #000;
+		}
+	}
+	.emsg, .smsg, .wmsg, .imsg {
+		.box-shadow(0 0  3px #CCC);
+	}
+	.emsg {
+		border-left: solid 5px darken(red, 10%);
+	}
+	.smsg {
+		border-left: solid 5px darken(green, 10%);
+	}
+	.wmsg {
+		border-left: solid 5px darken(yellow, 10%);
+	}
+	.imsg {
+		border-left: solid 5px darken(blue, 10%);
+	}
+
+}
+
+footer {
+	border-top: solid 1px #CCC;
+}

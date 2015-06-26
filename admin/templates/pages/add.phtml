@@ -1,0 +1,55 @@
+<?php if ($emsg != ""): ?>
+<p class="emsg"><?php echo $emsg; ?></p>
+<?php endif; ?>
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+	<p<?php echo (isset($errors['page_title']) ? ' class="emsg"' : ""); ?>>
+		<label for="page_title">Page Title: </label>
+		<input type="text" name="page_title" id="page_title" />
+		<?php if (isset($errors['page_title'])): ?>
+			<br><?php  echo $errors['page_title'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['content']) ? ' class="emsg"' : ""); ?>>
+		<label for="content">Content: </label>
+		<textarea name="content" id="content" class="editor"></textarea>
+		<?php if (isset($errors['content'])): ?>
+			<br><?php  echo $errors['content'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['slug']) ? ' class="emsg"' : ""); ?>>
+		<label for="slug">Slug:</label>
+		<input type="text" name="slug" id="slug" />
+		<?php if (isset($errors['slug'])): ?>
+			<br><?php  echo $errors['slug'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['menu_title']) ? ' class="emsg"' : ""); ?>>
+		<label for="menu_title">Menu Title:</label>
+		<input type="text" name="menu_title" id="menu_title" />
+		<?php if (isset($errors['menu_title'])): ?>
+			<br><?php  echo $errors['menu_title'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p>
+		<label for="active">
+			<input type="checkbox" name="active" id="active" />
+			Active
+		</label>
+	</p>
+	<p>
+		<label for="is_home">
+			<input type="checkbox" name="is_home" id="is_home" />
+			Is Home?
+		</label>
+	</p>
+	<p>
+		<label for="is_menu">
+			<input type="checkbox" name="is_menu" id="is_menu" />
+			Is Menu?
+		</label>
+	</p>
+	<p>
+		<input type="submit" value="Add New Page" />
+	</p>
+	<input type="hidden" name="add_page_key" value="1" />
+</form>

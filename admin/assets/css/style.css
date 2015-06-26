@@ -1,0 +1,248 @@
+@import url('reset.css');
+body {
+  font: normal 100%/1.5 Arial, Helvetica, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th {
+  font-weight: normal;
+}
+h1 {
+  font-size: 180%;
+}
+h2 {
+  font-size: 160%;
+}
+h3 {
+  font-size: 150%;
+}
+h4 {
+  font-size: 140%;
+}
+h5 {
+  font-size: 130%;
+}
+h6 {
+  font-size: 120%;
+}
+#main-nav ul {
+  text-align: center;
+}
+#main-nav ul li {
+  text-align: left;
+}
+#main-nav ul li a {
+  text-decoration: none;
+  outline: none;
+}
+#footer {
+  text-align: center;
+  font-weight: bold;
+}
+#main-content th {
+  text-align: left;
+}
+#wrapper {
+  max-width: 880px;
+  margin: 20px auto;
+}
+#header,
+#main-content,
+#footer {
+  padding: 20px;
+}
+#main-nav ul li {
+  display: inline-block;
+}
+#main-nav ul li a {
+  display: block;
+  padding: 10px 15px;
+}
+#main-content h1,
+#main-content h2,
+#main-content h3,
+#main-content h4,
+#main-content h5,
+#main-content h6,
+#main-content div.table,
+#main-content p,
+#main-content form {
+  margin-bottom: 20px;
+}
+#main-content div.table {
+  overflow: auto;
+}
+#main-content table {
+  width: 100%;
+}
+#main-content th,
+#main-content td {
+  padding: 15px;
+}
+#main-content form {
+  padding: 20px;
+}
+#main-content form label {
+  display: block;
+  margin-bottom: 10px;
+}
+#main-content form input[type="text"],
+#main-content form input[type="password"],
+#main-content form input[type="email"],
+#main-content form select,
+#main-content form textarea {
+  width: 98%;
+  padding: 1%;
+}
+#main-content form input[type="submit"],
+#main-content form input[type="button"],
+#main-content form input[type="reset"],
+#main-content form button {
+  padding: 5px 10px;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#main-content .emsg,
+#main-content .smsg,
+#main-content .wmsg,
+#main-content .imsg {
+  display: block;
+  padding: 10px;
+}
+@media screen and (max-width: 480px) {
+  #main-nav ul li {
+    display: block;
+  }
+}
+body {
+  background: #ECECEC;
+}
+#wrapper {
+  background: #FFF;
+  -webkit-box-shadow: 0 0 5px #cccccc;
+  -moz-box-shadow: 0 0 5px #cccccc;
+  box-shadow: 0 0 5px #cccccc;
+}
+#header {
+  background: #eaeaea;
+  border-bottom: solid 1px #AAA;
+}
+#main-nav {
+  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -ms-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: linear-gradient(top, #eeeeee, #dddddd);
+  border-bottom: solid 1px #AAA;
+}
+#main-nav ul li a:link,
+#main-nav ul li a:visited {
+  color: #000;
+  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -ms-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
+  background-image: linear-gradient(top, #eeeeee, #dddddd);
+}
+#main-nav ul li a:hover,
+#main-nav ul li a:active,
+#main-nav ul li a:focus {
+  color: #ECECEC;
+  background-image: -webkit-linear-gradient(top, #404040, #595959);
+  background-image: -moz-linear-gradient(top, #404040, #595959);
+  background-image: -ms-linear-gradient(top, #404040, #595959);
+  background-image: -o-linear-gradient(top, #404040, #595959);
+  background-image: linear-gradient(top, #404040, #595959);
+}
+#main-content table {
+  border: solid 1px #CCC;
+}
+#main-content th {
+  background: #AAA;
+  color: #FFF;
+}
+#main-content td {
+  background: #FFF;
+  color: #000;
+  border-bottom: solid 1px #CCC;
+}
+#main-content tr:nth-of-type(odd) td {
+  background: #FFF;
+}
+#main-content tr:nth-of-type(even) td {
+  background: #EEE;
+}
+#main-content tr:hover td {
+  background: #DDD;
+}
+#main-content form {
+  background: #FCFCFC;
+  border: solid 1px #CCC;
+}
+#main-content form input[type="text"],
+#main-content form input[type="password"],
+#main-content form input[type="email"],
+#main-content form select,
+#main-content form textarea {
+  border: solid 1px #BBB;
+}
+#main-content input[type="submit"],
+#main-content input[type="reset"],
+#main-content input[type="button"],
+#main-content button {
+  background-image: -webkit-linear-gradient(top, #000000, #222222);
+  background-image: -moz-linear-gradient(top, #000000, #222222);
+  background-image: -ms-linear-gradient(top, #000000, #222222);
+  background-image: -o-linear-gradient(top, #000000, #222222);
+  background-image: linear-gradient(top, #000000, #222222);
+  color: #FFF;
+  border: solid 1px #000;
+}
+#main-content input[type="submit"]:hover,
+#main-content input[type="reset"]:hover,
+#main-content input[type="button"]:hover,
+#main-content button:hover,
+#main-content input[type="submit"]:focus,
+#main-content input[type="reset"]:focus,
+#main-content input[type="button"]:focus,
+#main-content button:focus {
+  background-image: -webkit-linear-gradient(top, #222222, #000000);
+  background-image: -moz-linear-gradient(top, #222222, #000000);
+  background-image: -ms-linear-gradient(top, #222222, #000000);
+  background-image: -o-linear-gradient(top, #222222, #000000);
+  background-image: linear-gradient(top, #222222, #000000);
+  color: #FFF;
+  border: solid 1px #000;
+}
+#main-content .emsg,
+#main-content .smsg,
+#main-content .wmsg,
+#main-content .imsg {
+  -webkit-box-shadow: 0 0 3px #cccccc;
+  -moz-box-shadow: 0 0 3px #cccccc;
+  box-shadow: 0 0 3px #cccccc;
+}
+#main-content .emsg {
+  border-left: solid 5px #cc0000;
+}
+#main-content .smsg {
+  border-left: solid 5px #004d00;
+}
+#main-content .wmsg {
+  border-left: solid 5px #cccc00;
+}
+#main-content .imsg {
+  border-left: solid 5px #0000cc;
+}
+footer {
+  border-top: solid 1px #CCC;
+}
+.hidden {
+  display: none;
+}

@@ -1,0 +1,81 @@
+<section>
+	<h2>Last 10 recently added users.</h2>
+	<?php if(empty($users)): ?>
+	<p class="imsg">There are <strong>no</strong> users added yet.</p>
+	<?php else: ?>
+<div class="table">
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Username</th>
+				<th>Active</th>
+				<th>Option</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($users as $user): ?>
+			<tr>
+				<td><?php echo $user['id']; ?></td>
+				<td><?php echo $user['username']; ?></td>
+				<td><?php echo $user['active'] == "1" ? "Yes" : "No"; ?></td>
+				<td>
+					<a href="<?php echo ADMIN_ROOT; ?>users/edit.php?id=<?php echo $user['id']; ?>">Edit</a> | 
+					<a href="<?php echo ADMIN_ROOT; ?>users/view.php?id=<?php echo $user['id']; ?>">View</a> 
+				</td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>ID</th>
+				<th>Username</th>
+				<th>Active</th>
+				<th>Option</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+	<?php endif; ?>
+</section>
+
+<section>
+	<h2>Last 10 recently added pages.</h2>
+	<?php if(empty($users)): ?>
+	<p class="imsg">There are <strong>no</strong> users added yet.</p>
+	<?php else: ?>
+<div class="table">
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Page Title</th>
+				<th>Active</th>
+				<th>Option</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($pages as $page): ?>
+			<tr>
+				<td><?php echo $page['id']; ?></td>
+				<td><?php echo $page['page_title']; ?></td>
+				<td><?php echo $page['active'] == "1" ? "Yes" : "No"; ?></td>
+				<td>
+					<a href="<?php echo ADMIN_ROOT; ?>pages/edit.php?id=<?php echo $page['id']; ?>">Edit</a> | 
+					<a href="<?php echo ADMIN_ROOT; ?>pages/view.php?id=<?php echo $page['id']; ?>">View</a> 
+				</td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>ID</th>
+				<th>Page Title</th>
+				<th>Active</th>
+				<th>Option</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+	<?php endif; ?>
+</section>

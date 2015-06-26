@@ -1,0 +1,17 @@
+<?php if ($emsg != ""): ?>
+<p class="emsg"><?php echo $emsg; ?></p>
+<?php endif; ?>
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+	<p>
+		<label for="username">Username: </label>
+		<input type="text" name="username" id="username" />
+	</p>
+	<p>
+		<label for="password">Password: </label>
+		<input type="password" name="password" id="password" />
+	</p>
+	<p>
+		<input type="submit" value="Login" />
+	</p>
+	<input type="hidden" name="login_key" value="1" />
+</form>

@@ -1,0 +1,82 @@
+<?php if ($page_count < 1): ?>
+	<p class="emsg">No page found with id <strong><?php echo $requested_id; ?></strong></p>
+<?php else: ?>
+<?php if ($emsg != ""): ?>
+<p class="emsg"><?php echo $emsg; ?></p>
+<?php endif; ?>
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+	<p>
+		<input type="submit" value="Delete Page" onclick="return confirm('Are you sure, you want to delete?')" />
+	</p>
+	<input type="hidden" name="delete_page_key" value="1" />
+</form>
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" enctype="multipart/form-data">
+	<?php if ($page['image'] != ""): ?>
+	<p>
+		<img src="<?php echo SITE_ROOT . 'assets/images/' . $page['image']; ?>">
+	</p>
+	<?php endif; ?>
+	<p<?php echo (isset($errors['image']) ? ' class="emsg"' : ""); ?>>
+		<input type="file" name="image" id="image" />
+		<?php if (isset($errors['image'])): ?>
+			<br><?php  echo $errors['image'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p>
+		<input type="submit" value="Upload Image" />
+	</p>
+	<input type="hidden" name="upload_key" value="1" />
+</form>
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+	<p<?php echo (isset($errors['page_title']) ? ' class="emsg"' : ""); ?>>
+		<label for="page_title">Page Title: </label>
+		<input type="text" name="page_title" id="page_title" value="<?php echo htmlentities($page['page_title']); ?>" />
+		<?php if (isset($errors['page_title'])): ?>
+			<br><?php  echo $errors['page_title'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['content']) ? ' class="emsg"' : ""); ?>>
+		<label for="content">Content: </label>
+		<textarea name="content" id="content" class="editor"><?php echo htmlentities($page['slug']); ?></textarea>
+		<?php if (isset($errors['content'])): ?>
+			<br><?php  echo $errors['content'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['slug']) ? ' class="emsg"' : ""); ?>>
+		<label for="slug">Slug:</label>
+		<input type="text" name="slug" id="slug" value="<?php echo htmlentities($page['slug']); ?>" />
+		<?php if (isset($errors['slug'])): ?>
+			<br><?php  echo $errors['slug'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['menu_title']) ? ' class="emsg"' : ""); ?>>
+		<label for="menu_title">Menu Title:</label>
+		<input type="text" name="menu_title" id="menu_title" value="<?php echo htmlentities($page['menu_title']); ?>" />
+		<?php if (isset($errors['menu_title'])): ?>
+			<br><?php  echo $errors['menu_title'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p>
+		<label for="active">
+			<input type="checkbox" name="active" id="active"<?php echo $page['active'] == '1' ? ' checked="CHECKED"' : ''; ?> />
+			Active
+		</label>
+	</p>
+	<p>
+		<label for="is_home">
+			<input type="checkbox" name="is_home" id="is_home"<?php echo $page['is_home'] == '1' ? ' checked="CHECKED"' : ''; ?> />
+			Is Home?
+		</label>
+	</p>
+	<p>
+		<label for="is_menu">
+			<input type="checkbox" name="is_menu" id="is_menu"<?php echo $page['is_menu'] == '1' ? ' checked="CHECKED"' : ''; ?> />
+			Is Menu?
+		</label>
+	</p>
+	<p>
+		<input type="submit" value="Update Page" />
+	</p>
+	<input type="hidden" name="edit_page_key" value="1" />
+</form>
+<?php endif; ?>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title><?php echo $page['page_title']; ?> | <?php echo get_site_name(); ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" media="screen" />
+</head>
+
+<body>
+
+<div id="container"> 
+
+  <div id="header">
+    <div class="headtitle"><?php echo get_site_name(); ?></div>
+  </div>
+
+  <div id="menu"> 
+    <ul>
+      <?php if (!is_null($home)): ?>
+      <li><a href="<?php echo site_url($home['slug']); ?>" title="<?php echo $home['page_title']; ?>"><?php echo $home['menu_title']; ?></a></li>
+    <?php endif; ?>
+      <?php foreach($menus as $menu): ?>
+      <li><a href="<?php echo site_url($menu['slug']); ?>" title="<?php echo $menu['page_title']; ?>"><?php echo $menu['menu_title']; ?></a></li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+
+
+  <div id="content"> 
+
+    <div id="insidecontent"> <br>
+      <h1><?php echo $page['page_title']; ?></h1>	   
+      <?php if ($page['image'] != ""): ?>
+      <p><img src="<?php echo base_url(); ?>/assets/images/<?php echo $page['image']; ?>"></p>
+      <?php endif; ?>
+      <?php echo $page['content']; ?>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div id="footer"> <span>Copyright © <?php echo date('Y'); ?> <strong><?php echo get_site_name(); ?></strong> | All Rights Reserved  </span> 
+  </div>
+
+</div>
+</body>
+</html>

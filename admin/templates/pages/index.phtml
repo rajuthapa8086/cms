@@ -1,0 +1,42 @@
+<?php if ($smsg != ""): ?>
+<p class="smsg"><?php echo $smsg; ?></p>
+<?php endif; ?>
+<p class="imsg"><a href="add.php">Add New Page</a></p>
+<?php if ($total < 1): ?>
+<p class="imsg">There are currently <strong>no</strong> pages defined.</p>
+<?php else: ?>
+<p class="imsg">There are currently <strong><?php echo $total; ?></strong> pages defined.</p>
+<div class="table">
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Page Title</th>
+				<th>Active</th>
+				<th>Option</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php foreach($pages as $page): ?>
+			<tr>
+				<td><?php echo $page['id']; ?></td>
+				<td><?php echo $page['page_title']; ?></td>
+				<td><?php echo $page['active'] == "1" ? "Yes" : "No"; ?></td>
+				<td>
+					<a href="edit.php?id=<?php echo $page['id']; ?>">Edit</a> | 
+					<a href="view.php?id=<?php echo $page['id']; ?>">View</a> 
+				</td>
+			</tr>
+			<?php endforeach; ?>
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>ID</th>
+				<th>Page Title</th>
+				<th>Active</th>
+				<th>Option</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+<?php endif; ?>

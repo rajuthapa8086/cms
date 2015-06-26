@@ -1,0 +1,26 @@
+<?php if ($user_count < 1): ?>
+	<p class="emsg">No user found with id <strong><?php echo $requested_id; ?></strong></p>
+<?php else: ?>
+<table>
+	<tr>
+		<td><strong>Username</strong></td>
+		<td><?php echo $user['username']; ?></td>
+	</tr>
+	<tr>
+		<td><strong>Active</strong></td>
+		<td><?php echo $user['active']; ?></td>
+	</tr>
+	<tr>
+		<td><strong>Created At</strong></td>
+		<td><?php echo $user['created_at']; ?></td>
+	</tr>
+	<tr>
+		<td><strong>Modified At</strong></td>
+		<td><?php echo $user['modified_at']; ?></td>
+	</tr>
+	<tr>
+		<td><strong>Logged At</strong></td>
+		<td><?php echo $user['logged_at']; ?></td>
+	</tr>
+</table>
+<?php endif; ?>

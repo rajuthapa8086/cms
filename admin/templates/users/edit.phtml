@@ -1,0 +1,62 @@
+<?php if ($user_count < 1): ?>
+	<p class="emsg">No user found with id <strong><?php echo $requested_id; ?></strong></p>
+<?php else: ?>
+<?php if ($emsg != ""): ?>
+<p class="emsg"><?php echo $emsg; ?></p>
+<?php endif; ?>
+
+<?php if ($logger_id != $requested_id): ?>
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+	<p>
+		<input type="submit" value="Delete User" onclick="return confirm('Are you sure, you want to delete?')" />
+	</p>
+	<input type="hidden" name="delete_user_key" value="1" />
+</form>
+
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+	<p>
+		<label>Userame: <?php echo $user['username']; ?></label>
+	</p>
+	<p>
+		<label for="active">
+			<input type="checkbox" name="active" id="active"<?php echo $user['active'] == '1' ? ' checked="CHECKED"' : ''; ?> />
+			Active
+		</label>
+	</p>
+	<p>
+		<input type="submit" value="Update User" />
+	</p>
+	<input type="hidden" name="edit_user_key" value="1" />
+</form>
+<?php else: ?>
+<div class="table">
+	<table>
+		<tr>
+			<td>Username: </td>
+			<td><?php echo $user['username']; ?></td>
+		</tr>
+	</table>
+</div>
+<?php endif; ?>
+
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+	<p<?php echo (isset($errors['password']) ? ' class="emsg"' : ""); ?>>
+		<label for="password">Password: (6-30)</label>
+		<input type="password" name="password" id="password" />
+		<?php if (isset($errors['password'])): ?>
+			<br><?php  echo $errors['password'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['cpassword']) ? ' class="emsg"' : ""); ?>>
+		<label for="cpassword">Confirm Password: </label>
+		<input type="password" name="cpassword" id="cpassword" />
+		<?php if (isset($errors['cpassword'])): ?>
+			<br><?php  echo $errors['cpassword'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p>
+		<input type="submit" value="Update User Password" />
+	</p>
+	<input type="hidden" name="edit_user_password_key" value="1" />
+</form>
+<?php endif; ?>

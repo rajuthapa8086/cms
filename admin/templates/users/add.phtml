@@ -1,0 +1,36 @@
+<?php if ($emsg != ""): ?>
+<p class="emsg"><?php echo $emsg; ?></p>
+<?php endif; ?>
+<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+	<p<?php echo (isset($errors['username']) ? ' class="emsg"' : ""); ?>>
+		<label for="username">Username: (6-30)</label>
+		<input type="text" name="username" id="username" />
+		<?php if (isset($errors['username'])): ?>
+			<br><?php  echo $errors['username'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['password']) ? ' class="emsg"' : ""); ?>>
+		<label for="password">Password: (6-30)</label>
+		<input type="password" name="password" id="password" />
+		<?php if (isset($errors['password'])): ?>
+			<br><?php  echo $errors['password'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p<?php echo (isset($errors['cpassword']) ? ' class="emsg"' : ""); ?>>
+		<label for="cpassword">Confirm Password: </label>
+		<input type="password" name="cpassword" id="cpassword" />
+		<?php if (isset($errors['cpassword'])): ?>
+			<br><?php  echo $errors['cpassword'][0]; ?>
+		<?php endif; ?>
+	</p>
+	<p>
+		<label for="active">
+			<input type="checkbox" name="active" id="active" />
+			Active
+		</label>
+	</p>
+	<p>
+		<input type="submit" value="Add New User" />
+	</p>
+	<input type="hidden" name="add_user_key" value="1" />
+</form>

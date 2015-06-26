@@ -1,0 +1,73 @@
+#wrapper {
+	max-width: 880px;
+	margin: 20px auto;
+}
+#header,
+#main-content,
+#footer {
+	padding: 20px;
+}
+
+#main-nav {
+	ul {
+		li {
+			display: inline-block;
+			a {
+				display: block;
+				padding: 10px 15px;
+			}
+		}
+	}
+}
+
+#main-content {
+	h1, h2, h3, h4, h5, h6, div.table, p, form {
+		margin-bottom: 20px;
+	}
+	div.table {
+		overflow: auto;
+	}
+	table {
+		width: 100%;
+	}
+	th, td {
+		padding: 15px;
+	}
+	form {
+		padding: 20px;
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		select,
+		textarea {
+			width: 98%;
+			padding: 1%;			
+		}
+		input[type="submit"],
+		input[type="button"],
+		input[type="reset"],
+		button {
+			padding: 5px 10px;
+			cursor: pointer;
+			.border-radius(5px);
+		}
+	}
+	.emsg, .smsg, .wmsg, .imsg {
+		display: block;
+		padding: 10px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#main-nav {
+		ul {
+			li {
+				display: block;
+			}
+		}
+	}
+}
